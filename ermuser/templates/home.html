@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% block sidebar %}
+		<div>
+			{{ user.username }}
+			<p>Total: {{ user.get_profile.count_user_erms }} </p>
+			<ul>
+			{% for erm in user.erms.all %}
+				<li>{{ erm.title }}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	{% endblock  %}
+
+{% endblock %}
