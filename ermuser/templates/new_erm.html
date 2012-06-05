@@ -1,6 +1,6 @@
 {% extends 'home.html' %}
 {% block main %}
-<form id="new-erm-form" method="post" action=".">
+<form id="new-erm-form" method="post" action="." enctype="multipart/form-data">
 	{% csrf_token %}
 	{{ ermform }}
 	<input type="submit" value="Guardar" />

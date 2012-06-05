@@ -5,3 +5,4 @@ from models import Erm
 class ErmForm(ModelForm):
     class Meta:
         model = Erm
+        exclude = ('user','created_at')

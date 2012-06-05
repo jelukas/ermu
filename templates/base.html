@@ -2,12 +2,8 @@
 <html>
     <head>
 	    <title>{% block title %}{% endblock %}</title>
-	    <style type="text/css">
-		.erm-list-item img{
-			width: 100px;
-		}
-	    </style>
-    </head>
+	    {% load staticfiles %}
+	    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css" media="screen" />
     <body>
         {% block content %}{% endblock %}
     </body>
