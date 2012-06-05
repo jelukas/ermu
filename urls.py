@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default.urls')),
     # Examples:
     url(r'^$', 'ermuser.views.home', name='home'),
+    url(r'^nuevo/$', 'ermuser.views.nuevo', name='nuevo'),
     url(r'^erm/', include('ermu.ermuser.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

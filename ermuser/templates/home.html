@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-	{% block sidebar %}
-		<div>
+	{% block header %}
+	<header>
+		<h1>LOGO</h1>
+	</header>
+	{% endblock %}
+	<div id="userinfo">
+		{% block userinfo %}
 			{{ user.username }}
 			<p>Total: {{ user.get_profile.count_user_erms }} </p>
 			<ul>
@@ -9,7 +14,35 @@
 				<li>{{ erm.title }}</li>
 			{% endfor %}
 			</ul>
-		</div>
-	{% endblock  %}
-
+		{% endblock %}
+	</div>
+	<div id="sidebar">
+	{% block sidebar %}
+		<ul>
+			<li><a href="#" title="item">NUEVO ++</a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+			<li><a href="#" title="item">Item >></a></li>
+		</ul>
+	{% endblock %}
+	</div>
+	<div id="main">
+	{% block main %}
+		{% for erm in erm_list %}
+			<div class="erm-list-item">
+				<img alt="imagenerm" src="{{ erm.image.url }}" />
+				<h3>{{ erm.title }}</h3>
+				<ul>
+					<li>{{ erm.created_at }}</li>
+				</ul>
+			</div>
+		{% endfor %}
+	{% endblock %}
+	</div>
 {% endblock %}
